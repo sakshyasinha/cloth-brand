@@ -65,6 +65,52 @@ h1{
     margin-bottom: 0.5rem;
     background-color: rgba(200, 200, 200, 0.1);
 }
+.footer {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text color */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1; /* Equal width for each section */
+    min-width: 150px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-decoration: underline; /* Optional: underline each heading */
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #aaa; /* Lighter color for links */
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #fff; /* Brighter color on hover */
+    text-decoration: underline;
+}
 @media (max-width: 768px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
