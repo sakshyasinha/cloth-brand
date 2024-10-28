@@ -19,6 +19,8 @@
     <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
     <div class="nav-item"><a href="#about">About Us</a></div>
 </div>  
+
+<!-- Controls -->
 <div class="controls">
     <input type="text" id="search-bar" onkeyup="filterProducts()" placeholder="Search products...">
     <select id="sort" onchange="sortProducts()">
@@ -31,7 +33,7 @@
 
 <section id="mens" class="product-section">
     <h2 class="section-heading"><u>Men's Fashion</u></h2>
-    <div class="product-grid" id="product-grid">
+    <div class="product-grid" id="mens-products">
         <div class="product-item" data-name="Product 1" data-price="1000">
             <img src="site1.jpg" alt="Product 1">
             <h3>Product 1</h3>
@@ -51,10 +53,10 @@
             <button onclick="openModal('Product 3', 'site3.jpg', '₹1200')">View Details</button>
         </div>
         <div class="product-item" data-name="Product 4" data-price="1800">
-            <img src="site 4.jpg" alt="Product 4">
+            <img src="site4.jpg" alt="Product 4">
             <h3>Product 4</h3>
             <p>₹1800</p>
-            <button onclick="openModal('Product 4', 'site 4.jpg', '₹1800')">View Details</button>
+            <button onclick="openModal('Product 4', 'site4.jpg', '₹1800')">View Details</button>
         </div>
         <div class="product-item" data-name="Product 5" data-price="2000">
             <img src="site5.jpg" alt="Product 5">
@@ -73,22 +75,22 @@
 
 <section id="women" class="product-section" style="display: none;">
     <h2 class="section-heading"><u>Women's Fashion</u></h2>
-    <div class="product-grid" id="product-grid">
+    <div class="product-grid" id="women-products">
         <div class="product-item" data-name="Product W1" data-price="1000">
             <img src="sitew1.jpg" alt="Product 1">
-            <h3>Product 1</h3>
+            <h3>Product W1</h3>
             <p>₹1000</p>
             <button onclick="openModal('Product W1', 'sitew1.jpg', '₹1000')">View Details</button>
         </div>
         <div class="product-item" data-name="Product W2" data-price="2000">
             <img src="sitew2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
+            <h3>Product W2</h3>
             <p>₹2000</p>
             <button onclick="openModal('Product W2', 'sitew2.jpg', '₹2000')">View Details</button>
         </div>
         <div class="product-item" data-name="Product W3" data-price="1500">
             <img src="sitew3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
+            <h3>Product W3</h3>
             <p>₹1500</p>
             <button onclick="openModal('Product W3', 'sitew3.jpg', '₹1500')">View Details</button>
         </div>
@@ -98,16 +100,16 @@
 <!-- Children's Fashion Section -->
 <section id="children" class="product-section" style="display: none;">
     <h2 class="section-heading"><u>Children's Fashion</u></h2>
-    <div class="product-grid" id="product-grid">
+    <div class="product-grid" id="children-products">
         <div class="product-item" data-name="Product C1" data-price="1500">
             <img src="sitech1.jpg" alt="Product 1">
-            <h3>Product 1</h3>
+            <h3>Product C1</h3>
             <p>₹1500</p>
             <button onclick="openModal('Product C1', 'sitech1.jpg', '₹1500')">View Details</button>
         </div>
         <div class="product-item" data-name="Product C2" data-price="1500">
             <img src="sitech2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
+            <h3>Product C2</h3>
             <p>₹1500</p>
             <button onclick="openModal('Product C2', 'sitech2.jpg', '₹1500')">View Details</button>
         </div>
