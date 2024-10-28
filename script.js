@@ -14,9 +14,11 @@ function openModal(productName, productImage, productPrice) {
     const modal = document.getElementById("product-modal");
     const modalContent = modal.querySelector(".modal-content");
 
+    modal.style.display = "flex"; // Set display to flex to make modal visible
     modal.classList.add("show");
     modalContent.classList.add("show"); // Triggers fade-in
 }
+
 
 function closeModal() {
     const modal = document.getElementById("product-modal");
