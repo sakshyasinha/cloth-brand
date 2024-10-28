@@ -17,7 +17,7 @@
     <div class="nav-item"><a href="#" onclick="showSection('mens')">Men's Fashion</a></div>
     <div class="nav-item"><a href="#" onclick="showSection('women')">Women's Fashion</a></div>
     <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
-    <div class="nav-item"><a href="#about">About Us</a></div>
+    <div class="nav-item"><a href="https://www.linkedin.com/in/sakshya-sinha-b10a0827a/">About Us</a></div>
 </div>  
 
 <!-- Controls -->
@@ -28,8 +28,24 @@
         <option value="asc">Low to High</option>
         <option value="desc">High to Low</option>
     </select>
-    <button onclick="toggleTheme()" aria-label="Toggle Dark Mode">Toggle Theme</button>
+
+    <!-- Cart Icon -->
+    <div class="cart">
+        <button onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </div>
 </div>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeCart()">&times;</span>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: ₹0</p>
+        <button onclick="closeCart()">Close</button>
+    </div>
+</div>
+
 
 <section id="mens" class="product-section">
     <h2 class="section-heading"><u>Men's Fashion</u></h2>
@@ -125,14 +141,14 @@
     </div>
     <div class="footer-section">
         <h3>Contact</h3>
-        <p>Email: info@clothingbrand.com</p>
+        <p>Email: info@clothshipping.com</p>
         <p>Phone: +123 456 7890</p>
     </div>
     <div class="footer-section">
         <h3>Quick Links</h3>
         <ul class="footer-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.instagram.com/sakshyasinha/">Contact</a></li>
             <li><a href="#privacy">Privacy Policy</a></li>
         </ul>
     </div>
