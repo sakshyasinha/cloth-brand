@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Clothing Brand</title>
+    <title>Clothing Dropshipping</title>
 </head>
-<body>
-    <h1 id="main-heading" class="main-heading">MEN'S FASHION</h1>
-    
+<section class="hero">
+        <h1>Exclusive Fashion for Every Style</h1>
+        <p>Discover our unique collection and stay trendy.</p>
+        <button onclick="showSection('mens')">Shop Now</button>
+    </section>
+
     <!-- Navbar -->
     <div class="navbar">
-        <div class="nav-item"><a href="#" onclick="showSection('mens')">Mens</a></div>
-        <div class="nav-item"><a href="#" onclick="showSection('women')">Women</a></div>
-        <div class="nav-item"><a href="#" onclick="showSection('children')">Children</a></div>
-    </div>    
+        <div class="nav-item"><a href="#" onclick="showSection('mens')">Men's Fashion</a></div>
+        <div class="nav-item"><a href="#" onclick="showSection('women')">Women's Fashion</a></div>
+        <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
+        <div class="nav-item"><a href="#about">About Us</a></div>
+    </div>  
     
     <!-- Men's Fashion Section (Visible by default) -->
     <div id="mens" class="product-grid">
@@ -22,6 +26,7 @@
             <img src="site1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>₹1000</p>
+        <button onclick="openModal('Product 1', 'site1.jpg', '₹1000')">View Details</button>
         </div>
         <div class="product-item">
             <img src="site2.jpg" alt="Product 2">
@@ -82,10 +87,10 @@
             <p>₹1500</p>
         </div>
     </div>
-    <footer class="footer">
+   <footer class="footer">
         <div class="footer-section">
             <h3>About Us</h3>
-            <p>Learn more about our brand,mission and team</p>
+            <p>Learn more about our brand, mission, and team.</p>
         </div>
         <div class="footer-section">
             <h3>Contact</h3>
@@ -98,7 +103,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#terms">Terms of Service</a></li>
             </ul>
         </div>
     </footer>
