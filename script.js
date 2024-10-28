@@ -39,22 +39,26 @@ function sortProducts() {
     });
 }
 
-// Open Modal Function
 function openModal(productName, productImage, productPrice) {
-    document.getElementById('modal-product-name').innerText = productName;
-    document.getElementById('modal-product-image').src = productImage;
-    document.getElementById('modal-product-price').innerText = productPrice;
+    document.getElementById("modal-product-name").innerText = productName;
+    document.getElementById("modal-product-image").src = productImage;
+    document.getElementById("modal-product-price").innerText = productPrice;
     
-    const modal = document.getElementById('product-modal');
-    modal.style.display = 'flex'; // Use flex to center the modal
-    modal.classList.add('show'); // Add a class to manage opacity
+    const modal = document.getElementById("product-modal");
+    const modalContent = modal.querySelector(".modal-content");
+    
+    modal.classList.add("show");
+    modalContent.classList.add("show"); // Triggers fade-in
 }
 
-// Close Modal Function
 function closeModal() {
-    const modal = document.getElementById('product-modal');
-    modal.style.display = 'none'; // Hide the modal
+    const modal = document.getElementById("product-modal");
+    const modalContent = modal.querySelector(".modal-content");
+    
+    modal.classList.remove("show");
+    modalContent.classList.remove("show");
 }
+
 
 // Add Event Listener to Close Modal on Click Outside
 window.onclick = function(event) {
