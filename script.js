@@ -7,6 +7,9 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('shrink');
     }
 });
+document.querySelectorAll('.nav-item a').forEach(item => item.classList.remove('active'));
+document.querySelector(`.nav-item a[href*="${section}"]`).classList.add('active');
+
 
 
 function showSection(section) {
