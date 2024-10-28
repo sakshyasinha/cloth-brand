@@ -1,96 +1,130 @@
+// Function to show a specific product section
 function showSection(section) {
     const sections = document.querySelectorAll('.product-section');
     sections.forEach(s => {
-        s.style.display = 'none';
+        s.style.display = 'none'; // Hide all sections
     });
-    document.getElementById(section).style.display = 'block';
+    document.getElementById(section).style.display = 'block'; // Show selected section
 }
 
+// Function to toggle the cart modal
+function toggleCart() {
+    const cartModal = document.getElementById('cart-modal');
+    if (cartModal.style.display === 'block') {
+        cartModal.style.display = 'none'; // Hide cart modal
+    } else {
+        displayCart(); // Update cart display
+        cartModal.style.display = 'block'; // Show cart modal
+    }
+}
+
+// Function to close any modal by its ID
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none'; // Hide the modal
+}
+
+// Example function to open the product modal
+function openProductModal(product) {
+    document.getElementById('modal-product-name').textContent = product.name;
+    document.getElementById('modal-product-image').src = product.image;
+    document.getElementById('modal-product-price').textContent = product.price;
+    const productModal = document.getElementById('product-modal');
+    productModal.style.display = 'flex'; // Show the modal
+}
+
+// Function to update cart count
+function updateCartCount(count) {
+    document.getElementById('cart-count').textContent = count; // Update the cart count
+}
+
+// Open modal with specific product details
 function openModal(productName, productImage, productPrice) {
     document.getElementById("modal-product-name").innerText = productName;
     document.getElementById("modal-product-image").src = productImage;
     document.getElementById("modal-product-price").innerText = `${productPrice}`;
-    
+
     const modal = document.getElementById("product-modal");
     const modalContent = modal.querySelector(".modal-content");
 
     modal.style.display = "flex"; // Show modal
-    modal.classList.add("show");
     modalContent.classList.add("show"); // Fade-in effect
 }
 
-function closeModal() {
+// Close the product modal
+function closeProductModal() {
     const modal = document.getElementById("product-modal");
     modal.classList.remove("show");
     modal.style.display = "none"; // Hide modal
 }
 
+// Close modal when clicking outside of it
 window.onclick = function(event) {
-    const modal = document.getElementById('product-modal');
-    if (event.target === modal) {
-        closeModal();
+    const productModal = document.getElementById('product-modal');
+    const cartModal = document.getElementById('cart-modal');
+    if (event.target === productModal) {
+        closeProductModal();
+    }
+    if (event.target === cartModal) {
+        toggleCart(); // Close cart modal
     }
 };
 
+// Function to filter products based on search input
 function filterProducts() {
     const searchValue = document.getElementById('search-bar').value.toLowerCase();
     const productItems = document.querySelectorAll('.product-item');
     productItems.forEach(item => {
         const productName = item.getAttribute('data-name').toLowerCase();
-        item.style.display = productName.includes(searchValue) ? 'block' : 'none';
+        item.style.display = productName.includes(searchValue) ? 'block' : 'none'; // Show/hide items
     });
 }
 
+// Function to sort products based on selected criteria
 function sortProducts() {
     const sortValue = document.getElementById('sort').value;
     const productSections = document.querySelectorAll('.product-section');
-    
+
     productSections.forEach(section => {
         const products = Array.from(section.querySelectorAll('.product-item'));
         products.sort((a, b) => {
             const priceA = parseInt(a.getAttribute('data-price'));
             const priceB = parseInt(b.getAttribute('data-price'));
-            return sortValue === 'asc' ? priceA - priceB : priceB - priceA;
+            return sortValue === 'asc' ? priceA - priceB : priceB - priceA; // Sort based on selected order
         });
 
         const productGrid = section.querySelector('.product-grid');
         productGrid.innerHTML = ''; // Clear existing products
-        products.forEach(product => productGrid.appendChild(product));
+        products.forEach(product => productGrid.appendChild(product)); // Append sorted products
     });
 }
 
+// Function to scroll to the top of the page
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Cart implementation
 let cart = [];
 const cartCountElement = document.getElementById('cart-count');
 const cartItemsElement = document.getElementById('cart-items');
 const cartTotalElement = document.getElementById('cart-total');
 
+// Function to add products to the cart
 function addToCart(productName, productPrice) {
     cart.push({ name: productName, price: parseInt(productPrice) });
-    cartCountElement.innerText = cart.length;
+    cartCountElement.innerText = cart.length; // Update cart count
 }
 
-function toggleCart() {
-    const cartModal = document.getElementById('cart-modal');
-    if (cartModal.style.display === 'block') {
-        cartModal.style.display = 'none';
-    } else {
-        displayCart();
-        cartModal.style.display = 'block';
-    }
-}
-
+// Function to display cart items
 function displayCart() {
-    cartItemsElement.innerHTML = '';
+    cartItemsElement.innerHTML = ''; // Clear cart items
     let total = 0;
     cart.forEach(item => {
         total += item.price;
         const itemElement = document.createElement('div');
         itemElement.innerText = `${item.name} - ₹${item.price}`;
-        cartItemsElement.appendChild(itemElement);
+        cartItemsElement.appendChild(itemElement); // Add item to cart display
     });
     cartTotalElement.innerText = `Total: ₹${total}`; // Display total
 }
@@ -99,8 +133,9 @@ function displayCart() {
 window.onscroll = function() {
     const backToTopButton = document.getElementById("back-to-top");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopButton.style.display = "block";
+        backToTopButton.style.display = "block"; // Show button
     } else {
-        backToTopButton.style.display = "none";
+        backToTopButton.style.display = "none"; // Hide button
     }
 };
+
