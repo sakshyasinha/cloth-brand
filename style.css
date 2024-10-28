@@ -118,13 +118,22 @@ body {
     padding: 20px;
     border-radius: 8px; /* Rounded corners */
     width: 90%; /* Flexible width */
-    max-width: 400px; /* Maximum width for larger screens */
+    max-width: 500px; /* Increase max width if needed */
+    max-height: 90vh; /* Set max height to avoid overflow */
+    overflow: hidden; /* Hide overflow */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     position: relative; /* For positioning close button */
-    transition: transform 0.3s ease; /* Smooth transition */
-    transform: translateY(-30px); /* Initial position */
-    opacity: 0; /* Start hidden */
 }
+
+/* Image in Modal */
+.modal-content img {
+    width: 100%; /* Full width of modal */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 70vh; /* Set a max height to avoid overflow */
+    object-fit: contain; /* Ensure the entire image is shown */
+    margin-bottom: 1rem; /* Space below image */
+}
+
 
 /* Show modal with fade-in */
 .modal.show {
