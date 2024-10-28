@@ -75,11 +75,28 @@ body {
 }
 
 .product-item {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 1rem;
-    text-align: center;
+    text-align: center; /* Center text and inline elements */
 }
+
+.add-to-cart {
+    background-color: #007bff; /* Add to cart button color */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
 
 .product-item img {
     width: 100%;
