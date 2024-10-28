@@ -7,27 +7,35 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('shrink');
     }
 });
-document.querySelectorAll('.nav-item a').forEach(item => item.classList.remove('active'));
-document.querySelector(`.nav-item a[href*="${section}"]`).classList.add('active');
-
-
 
 function showSection(section) {
-    // Hide all sections
-    document.getElementById('mens').style.display = 'none';
-    document.getElementById('women').style.display = 'none';
-    document.getElementById('children').style.display = 'none';
+    document.querySelectorAll('.product-grid').forEach(grid => grid.style.display = 'none');
+    document.getElementById(section).style.display = 'grid';
 
-    // Show the selected section
-    document.getElementById(section).style.display = 'block';
+    document.getElementById('main-heading').textContent =
+        section.charAt(0).toUpperCase() + section.slice(1) + "'s Fashion";
+}
 
-    // Update the main heading text based on the section
-    const heading = document.getElementById('main-heading');
-    if (section === 'mens') {
-        heading.textContent = "MEN'S FASHION";
-    } else if (section === 'women') {
-        heading.textContent = "WOMEN'S FASHION";
-    } else if (section === 'children') {
-        heading.textContent = "CHILDREN'S FASHION";
-    }
+function openModal(name, image, price) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>${name}</h2>
+            <img src="${image}" alt="${name}">
+            <p>${price}</p>
+            <button onclick="addToCart('${name}')">Add to Cart</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+function closeModal() {
+    const modal = document.querySelector('.modal');
+    if (modal) modal.remove();
+}
+
+function addToCart(item) {
+    alert(`${item} has been added to your cart!`);
 }
