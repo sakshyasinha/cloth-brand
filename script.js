@@ -40,14 +40,21 @@ function sortProducts() {
 }
 
 function openModal(productName, productImage, productPrice) {
+    // Set the product details in the modal
     document.getElementById('modal-product-name').innerText = productName;
     document.getElementById('modal-product-image').src = productImage;
     document.getElementById('modal-product-price').innerText = productPrice;
-    document.getElementById('product-modal').style.display = 'block';
+
+    // Show the modal
+    const modal = document.getElementById('product-modal');
+    modal.style.display = 'flex';  // Use 'flex' to center the modal content
+    modal.classList.add('show');   // Add the 'show' class to change opacity
 }
 
 function closeModal() {
-    document.getElementById('product-modal').style.display = 'none';
+    const modal = document.getElementById('product-modal');
+    modal.style.display = 'none';   // Hide the modal
+    modal.classList.remove('show'); // Remove the 'show' class
 }
 
 function scrollToTop() {
