@@ -6,16 +6,36 @@ function showSection(section) {
     document.getElementById(section).style.display = 'block';
 }
 
+function openModal(productName, productImage, productPrice) {
+    document.getElementById("modal-product-name").innerText = productName;
+    document.getElementById("modal-product-image").src = productImage;
+    document.getElementById("modal-product-price").innerText = `₹${productPrice}`;
+    
+    const modal = document.getElementById("product-modal");
+    const modalContent = modal.querySelector(".modal-content");
+
+    modal.classList.add("show");
+    modalContent.classList.add("show"); // Triggers fade-in
+}
+
+function closeModal() {
+    const modal = document.getElementById("product-modal");
+    modal.classList.remove("show");
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('product-modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+};
+
 function filterProducts() {
     const searchValue = document.getElementById('search-bar').value.toLowerCase();
     const productItems = document.querySelectorAll('.product-item');
     productItems.forEach(item => {
         const productName = item.getAttribute('data-name').toLowerCase();
-        if (productName.includes(searchValue)) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
+        item.style.display = productName.includes(searchValue) ? 'block' : 'none';
     });
 }
 
@@ -32,42 +52,11 @@ function sortProducts() {
         });
 
         // Clear the section and append sorted products
-        section.querySelector('.product-grid').innerHTML = '';
-        products.forEach(product => {
-            section.querySelector('.product-grid').appendChild(product);
-        });
+        const productGrid = section.querySelector('.product-grid');
+        productGrid.innerHTML = '';
+        products.forEach(product => productGrid.appendChild(product));
     });
 }
-
-function openModal(productName, productImage, productPrice) {
-    document.getElementById("modal-product-name").innerText = productName;
-    document.getElementById("modal-product-image").src = productImage;
-    document.getElementById("modal-product-price").innerText = productPrice;
-    
-    const modal = document.getElementById("product-modal");
-    const modalContent = modal.querySelector(".modal-content");
-    
-    modal.classList.add("show");
-    modalContent.classList.add("show"); // Triggers fade-in
-}
-
-function closeModal() {
-    const modal = document.getElementById("product-modal");
-    const modalContent = modal.querySelector(".modal-content");
-    
-    modal.classList.remove("show");
-    modalContent.classList.remove("show");
-}
-
-
-// Add Event Listener to Close Modal on Click Outside
-window.onclick = function(event) {
-    const modal = document.getElementById('product-modal');
-    if (event.target === modal) {
-        closeModal();
-    }
-};
-
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -76,10 +65,12 @@ function scrollToTop() {
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
 }
+
+// Cart functionality
 let cart = [];
-let cartCountElement = document.getElementById('cart-count');
-let cartItemsElement = document.getElementById('cart-items');
-let cartTotalElement = document.getElementById('cart-total');
+const cartCountElement = document.getElementById('cart-count');
+const cartItemsElement = document.getElementById('cart-items');
+const cartTotalElement = document.getElementById('cart-total');
 
 function addToCart(productName, productPrice) {
     cart.push({ name: productName, price: parseInt(productPrice) });
@@ -111,4 +102,3 @@ function displayCart() {
 function closeCart() {
     document.getElementById('cart-modal').style.display = 'none';
 }
-
