@@ -1,27 +1,38 @@
-function showSection(sectionId) {
-    // Hide all sections
-    document.querySelectorAll('.product-grid').forEach(section => {
-        section.style.display = 'none';
-    });
-    // Show the selected section
-    document.getElementById(sectionId).style.display = 'grid';
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('shrink');
+    } else {
+        navbar.classList.remove('shrink');
+    }
+});
+
+function showSection(section) {
+    document.getElementById('mens').style.display = 'none';
+    document.getElementById('women').style.display = 'none';
+    document.getElementById('children').style.display = 'none';
+
+    document.getElementById(section).style.display = 'block';
+
+    const heading = document.getElementById('main-heading');
+    if (section === 'mens') {
+        heading.textContent = "MEN'S FASHION";
+    } else if (section === 'women') {
+        heading.textContent = "WOMEN'S FASHION";
+    } else if (section === 'children') {
+        heading.textContent = "CHILDREN'S FASHION";
+    }
 }
 
-function openModal(name, image, price) {
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>${name}</h2>
-            <img src="${image}" alt="${name}">
-            <p>${price}</p>
-        </div>
-    `;
-    document.body.appendChild(modal);
+function openModal(productName, productImage, productPrice) {
+    document.getElementById('modal-product-name').textContent = productName;
+    document.getElementById('modal-product-image').src = productImage;
+    document.getElementById('modal-product-price').textContent = productPrice;
+
+    document.getElementById('product-modal').style.display = 'flex';
 }
 
 function closeModal() {
-    const modal = document.querySelector('.modal');
-    if (modal) modal.remove();
+    document.getElementById('product-modal').style.display = 'none';
 }
