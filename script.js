@@ -64,3 +64,39 @@ function scrollToTop() {
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
 }
+let cart = [];
+let cartCountElement = document.getElementById('cart-count');
+let cartItemsElement = document.getElementById('cart-items');
+let cartTotalElement = document.getElementById('cart-total');
+
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: parseInt(productPrice) });
+    cartCountElement.innerText = cart.length;
+}
+
+function toggleCart() {
+    const cartModal = document.getElementById('cart-modal');
+    if (cartModal.style.display === 'block') {
+        cartModal.style.display = 'none';
+    } else {
+        displayCart();
+        cartModal.style.display = 'block';
+    }
+}
+
+function displayCart() {
+    cartItemsElement.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        total += item.price;
+        const itemElement = document.createElement('div');
+        itemElement.innerText = `${item.name} - ₹${item.price}`;
+        cartItemsElement.appendChild(itemElement);
+    });
+    cartTotalElement.innerText = `Total: ₹${total}`;
+}
+
+function closeCart() {
+    document.getElementById('cart-modal').style.display = 'none';
+}
+
