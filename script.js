@@ -14,15 +14,15 @@ function openModal(productName, productImage, productPrice) {
     const modal = document.getElementById("product-modal");
     const modalContent = modal.querySelector(".modal-content");
 
-    modal.style.display = "flex"; // Set display to flex to make modal visible
+    modal.style.display = "flex"; // Show modal
     modal.classList.add("show");
-    modalContent.classList.add("show"); // Triggers fade-in
+    modalContent.classList.add("show"); // Fade-in effect
 }
-
 
 function closeModal() {
     const modal = document.getElementById("product-modal");
     modal.classList.remove("show");
+    modal.style.display = "none"; // Hide modal
 }
 
 window.onclick = function(event) {
@@ -53,9 +53,8 @@ function sortProducts() {
             return sortValue === 'asc' ? priceA - priceB : priceB - priceA;
         });
 
-        // Clear the section and append sorted products
         const productGrid = section.querySelector('.product-grid');
-        productGrid.innerHTML = '';
+        productGrid.innerHTML = ''; // Clear existing products
         products.forEach(product => productGrid.appendChild(product));
     });
 }
@@ -64,11 +63,6 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-}
-
-// Cart functionality
 let cart = [];
 const cartCountElement = document.getElementById('cart-count');
 const cartItemsElement = document.getElementById('cart-items');
@@ -98,9 +92,15 @@ function displayCart() {
         itemElement.innerText = `${item.name} - ₹${item.price}`;
         cartItemsElement.appendChild(itemElement);
     });
-    cartTotalElement.innerText = `Total: ₹${total}`;
+    cartTotalElement.innerText = `Total: ₹${total}`; // Display total
 }
 
-function closeCart() {
-    document.getElementById('cart-modal').style.display = 'none';
-}
+// Scroll event for "Back to Top" button
+window.onscroll = function() {
+    const backToTopButton = document.getElementById("back-to-top");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
