@@ -1,81 +1,71 @@
-// Function to show a specific product section
 function showSection(section) {
     const sections = document.querySelectorAll('.product-section');
     sections.forEach(s => {
-        s.style.display = 'none'; // Hide all sections
+        s.style.display = 'none';
     });
-    document.getElementById(section).style.display = 'block'; // Show selected section
-}
-// Function to close any modal by its ID
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none'; // Hide the modal
+    document.getElementById(section).style.display = 'block';
 }
 
-// Ensure to call closeModal for cart modal
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}
+
 function toggleCart() {
     const cartModal = document.getElementById('cart-modal');
     if (cartModal.style.display === 'block') {
-        closeModal('cart-modal'); // Use closeModal function for consistency
+        closeModal('cart-modal');
     } else {
-        displayCart(); // Update cart display
-        cartModal.style.display = 'block'; // Show cart modal
+        displayCart();
+        cartModal.style.display = 'block';
     }
 }
 
-
-// Function to open the product modal
 function openProductModal(product) {
     document.getElementById('modal-product-name').textContent = product.name;
     document.getElementById('modal-product-image').src = product.image;
     document.getElementById('modal-product-price').textContent = product.price;
 
     const productModal = document.getElementById('product-modal');
-    productModal.style.display = 'flex'; // Show the modal
+    productModal.style.display = 'flex';
 }
 
-// Function to update cart count
 function updateCartCount() {
-    document.getElementById('cart-count').textContent = cart.length; // Update the cart count
+    document.getElementById('cart-count').textContent = cart.length;
 }
 
-// Open modal with specific product details
 function openModal(productName, productImage, productPrice) {
     document.getElementById("modal-product-name").innerText = productName;
     document.getElementById("modal-product-image").src = productImage;
     document.getElementById("modal-product-price").innerText = `${productPrice}`;
 
     const modal = document.getElementById("product-modal");
-    modal.style.display = "flex"; // Show modal
+    modal.style.display = "flex";
 }
 
-// Close the product modal
 function closeProductModal() {
-    closeModal('product-modal'); // Use closeModal function for consistency
+    closeModal('product-modal');
 }
 
-// Close modal when clicking outside of it
 window.onclick = function(event) {
     const productModal = document.getElementById('product-modal');
     const cartModal = document.getElementById('cart-modal');
     if (event.target === productModal) {
         closeProductModal();
     } else if (event.target === cartModal) {
-        closeModal('cart-modal'); // Use closeModal function for consistency
+        closeModal('cart-modal');
     }
 };
 
-// Function to filter products based on search input
 function filterProducts() {
     const searchValue = document.getElementById('search-bar').value.toLowerCase();
     const productItems = document.querySelectorAll('.product-item');
     productItems.forEach(item => {
         const productName = item.getAttribute('data-name').toLowerCase();
-        item.style.display = productName.includes(searchValue) ? 'block' : 'none'; // Show/hide items
+        item.style.display = productName.includes(searchValue) ? 'block' : 'none';
     });
 }
 
-// Function to sort products based on selected criteria
 function sortProducts() {
     const sortValue = document.getElementById('sort').value;
     const productSections = document.querySelectorAll('.product-section');
@@ -85,70 +75,55 @@ function sortProducts() {
         products.sort((a, b) => {
             const priceA = parseInt(a.getAttribute('data-price'));
             const priceB = parseInt(b.getAttribute('data-price'));
-            return sortValue === 'asc' ? priceA - priceB : priceB - priceA; // Sort based on selected order
+            return sortValue === 'asc' ? priceA - priceB : priceB - priceA;
         });
 
         const productGrid = section.querySelector('.product-grid');
-        productGrid.innerHTML = ''; // Clear existing products
-        products.forEach(product => productGrid.appendChild(product)); // Append sorted products
+        productGrid.innerHTML = '';
+        products.forEach(product => productGrid.appendChild(product));
     });
 }
 
-// Function to scroll to the top of the page
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Cart implementation
 let cart = [];
 const cartCountElement = document.getElementById('cart-count');
 const cartItemsElement = document.getElementById('cart-items');
 const cartTotalElement = document.getElementById('cart-total');
 
-// Function to add products to the cart
 function addToCart(productName, productPrice) {
     cart.push({ name: productName, price: parseInt(productPrice) });
-    updateCartCount(); // Update cart count
+    updateCartCount();
 }
 
-// Function to display cart items
 function displayCart() {
-    cartItemsElement.innerHTML = ''; // Clear cart items
+    cartItemsElement.innerHTML = '';
     let total = 0;
     cart.forEach(item => {
         total += item.price;
         const itemElement = document.createElement('div');
         itemElement.innerText = `${item.name} - ₹${item.price}`;
-        cartItemsElement.appendChild(itemElement); // Add item to cart display
+        cartItemsElement.appendChild(itemElement);
     });
-    cartTotalElement.innerText = `Total: ₹${total}`; // Display total
+    cartTotalElement.innerText = `Total: ₹${total}`;
 }
 
-// Scroll event for "Back to Top" button
 window.onscroll = function() {
     const backToTopButton = document.getElementById("back-to-top");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopButton.style.display = "block"; // Show button
+        backToTopButton.style.display = "block";
     } else {
-        backToTopButton.style.display = "none"; // Hide button
+        backToTopButton.style.display = "none";
     }
 };
 
-// Function to handle adding products to the cart from the product modal
 function addToCartFromModal() {
     const productName = document.getElementById("modal-product-name").innerText;
-    const productPrice = document.getElementById("modal-product-price").innerText.trim(); // No need to replace '₹' if you're keeping it
+    const productPrice = document.getElementById("modal-product-price").innerText.trim();
 
-    // Check if the product price contains '₹' and remove it if necessary
-    const priceNumber = parseInt(productPrice.replace('₹', '').trim()); // Extract numeric value for cart logic
-
-    // Add the product to the cart with the original formatted price
-    addToCart(productName, priceNumber); // Pass the numeric value without '₹'
-    closeProductModal(); // Close the modal after adding to cart
+    const priceNumber = parseInt(productPrice.replace('₹', '').trim());
+    addToCart(productName, priceNumber);
+    closeProductModal();
 }
-
-
-
-
-// Call this function when you want to open the modal
-openProductModal(exampleProduct);
