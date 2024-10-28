@@ -15,7 +15,7 @@ body {
     background-size: cover;
     color: #fff;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 3rem 1rem;
 }
 .hero h1 {
     font-size: 3em;
@@ -96,7 +96,8 @@ body {
 /* Center Align Section Headings */
 .product-section h2.section-heading {
     text-align: center;
-    margin-bottom: 1rem; /* Add some spacing below the heading */
+    margin: 0;
+    padding-top:10px
 }
 
 /* Footer */
