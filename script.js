@@ -15,22 +15,16 @@ function showSection(section) {
 
     document.getElementById(section).style.display = 'block';
 
-    const heading = document.getElementById('main-heading');
-    if (section === 'mens') {
-        heading.textContent = "MEN'S FASHION";
-    } else if (section === 'women') {
-        heading.textContent = "WOMEN'S FASHION";
-    } else if (section === 'children') {
-        heading.textContent = "CHILDREN'S FASHION";
-    }
+    // Update the heading (optional, add this if you create a main heading in the HTML)
+    // document.getElementById('main-heading').innerText = section.charAt(0).toUpperCase() + section.slice(1) + "'s Fashion";
 }
 
 function openModal(productName, productImage, productPrice) {
-    document.getElementById('modal-product-name').textContent = productName;
+    document.getElementById('modal-product-name').innerText = productName;
     document.getElementById('modal-product-image').src = productImage;
-    document.getElementById('modal-product-price').textContent = productPrice;
-
-    document.getElementById('product-modal').style.display = 'flex';
+    document.getElementById('modal-product-price').innerText = productPrice;
+    
+    document.getElementById('product-modal').style.display = 'block';
 }
 
 function closeModal() {
