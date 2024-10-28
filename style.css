@@ -47,6 +47,11 @@ h1{
 .nav-item a:hover{
     background-color: #555;
 }
+.nav-item a.active {
+    color: #ffa500; /* Highlight active link color */
+    font-weight: bold;
+}
+
 
 .product-grid {
     display: grid;
