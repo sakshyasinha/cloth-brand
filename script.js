@@ -9,7 +9,7 @@ function showSection(section) {
 function openModal(productName, productImage, productPrice) {
     document.getElementById("modal-product-name").innerText = productName;
     document.getElementById("modal-product-image").src = productImage;
-    document.getElementById("modal-product-price").innerText = `₹${productPrice}`;
+    document.getElementById("modal-product-price").innerText = `${productPrice}`;
     
     const modal = document.getElementById("product-modal");
     const modalContent = modal.querySelector(".modal-content");
