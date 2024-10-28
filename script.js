@@ -29,6 +29,7 @@ function openProductModal(product) {
     document.getElementById('modal-product-name').textContent = product.name;
     document.getElementById('modal-product-image').src = product.image;
     document.getElementById('modal-product-price').textContent = product.price;
+
     const productModal = document.getElementById('product-modal');
     productModal.style.display = 'flex'; // Show the modal
 }
@@ -59,8 +60,7 @@ window.onclick = function(event) {
     const cartModal = document.getElementById('cart-modal');
     if (event.target === productModal) {
         closeProductModal();
-    }
-    if (event.target === cartModal) {
+    } else if (event.target === cartModal) {
         closeModal('cart-modal'); // Use closeModal function for consistency
     }
 };
@@ -115,7 +115,7 @@ function addToCart(productName, productPrice) {
 function displayCart() {
     cartItemsElement.innerHTML = ''; // Clear cart items
     let total = 0;
-        cart.forEach(item => {
+    cart.forEach(item => {
         total += item.price;
         const itemElement = document.createElement('div');
         itemElement.innerText = `${item.name} - ₹${item.price}`;
@@ -137,7 +137,7 @@ window.onscroll = function() {
 // Function to handle adding products to the cart from the product modal
 function addToCartFromModal() {
     const productName = document.getElementById("modal-product-name").innerText;
-    const productPrice = document.getElementById("modal-product-price").innerText.replace('₹', '');
+    const productPrice = document.getElementById("modal-product-price").innerText.replace('₹', '').trim();
     addToCart(productName, productPrice);
     closeProductModal(); // Close the modal after adding to cart
 }
@@ -147,7 +147,7 @@ function addToCartFromModal() {
 const exampleProduct = {
     name: "Example Product",
     image: "path/to/image.jpg",
-    price: "₹500"
+    price: "500" // Price should be a number without the currency symbol
 };
 
 // Call this function when you want to open the modal
