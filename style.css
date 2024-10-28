@@ -99,8 +99,6 @@ body {
 
 .modal {
     display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
     left: 0;
@@ -108,21 +106,19 @@ body {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
-    opacity: 0; /* Start with invisible */
-    transition: opacity 0.3s ease; /* Fade effect */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity for background */
 }
 
+/* Modal Content */
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto; /* 10% from the top and centered */
+    background-color: #fff; /* White background */
+    margin: 10% auto; /* Centered with some top margin */
     padding: 20px;
     border: 1px solid #888;
-    width: 90%; /* Responsive width */
-    max-width: 500px; /* Max width for larger screens */
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Maximum width for larger screens */
     border-radius: 5px; /* Rounded corners */
-    opacity: 0; /* Start with invisible */
-    transition: opacity 0.3s ease; /* Fade effect */
+    transition: opacity 0.3s ease; /* Smooth transition */
 }
 
 .modal.show {
@@ -134,9 +130,16 @@ body {
     opacity: 1; /* Fade in for content */
 }
 .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -156,19 +159,23 @@ body {
     padding: 1rem;
     background-color: #f1f1f1;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Center items vertically */
 }
+
 .controls input {
     padding: 0.5rem;
     width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-right: 1rem; /* Add space between elements */
 }
+
 .controls select {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-right: 1rem; /* Add space between elements */
 }
 .controls button {
     padding: 0.5rem 1rem;
@@ -200,10 +207,7 @@ body {
     background-color: #555;
 }
 .cart {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1000;
+    margin-left: auto; /* Push the cart button to the far right */
 }
 
 .cart button {
@@ -211,14 +215,14 @@ body {
     color: white;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth background transition */
+    border-radius: 4px; /* Add border radius for a cleaner look */
 }
 
 .cart button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
+
 
 
 /* Cart Modal Styles */
