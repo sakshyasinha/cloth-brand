@@ -1,19 +1,10 @@
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('shrink');
-    } else {
-        navbar.classList.remove('shrink');
-    }
-});
-
-function showSection(section) {
-    document.querySelectorAll('.product-grid').forEach(grid => grid.style.display = 'none');
-    document.getElementById(section).style.display = 'grid';
-
-    document.getElementById('main-heading').textContent =
-        section.charAt(0).toUpperCase() + section.slice(1) + "'s Fashion";
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.product-grid').forEach(section => {
+        section.style.display = 'none';
+    });
+    // Show the selected section
+    document.getElementById(sectionId).style.display = 'grid';
 }
 
 function openModal(name, image, price) {
@@ -25,7 +16,6 @@ function openModal(name, image, price) {
             <h2>${name}</h2>
             <img src="${image}" alt="${name}">
             <p>${price}</p>
-            <button onclick="addToCart('${name}')">Add to Cart</button>
         </div>
     `;
     document.body.appendChild(modal);
@@ -34,8 +24,4 @@ function openModal(name, image, price) {
 function closeModal() {
     const modal = document.querySelector('.modal');
     if (modal) modal.remove();
-}
-
-function addToCart(item) {
-    alert(`${item} has been added to your cart!`);
 }
