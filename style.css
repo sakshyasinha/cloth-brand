@@ -125,6 +125,9 @@ body {
 
 /* Modal Content */
 .modal-content {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     background-color: #fff; /* White background */
     margin: auto; /* Center the modal */
     padding: 20px;
@@ -134,8 +137,8 @@ body {
     max-height: 90vh; /* Set max height to avoid overflow */
     overflow: hidden; /* Hide overflow */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    position: relative; /* For positioning close button */
 }
+
 
 /* Image in Modal */
 .modal-content img {
