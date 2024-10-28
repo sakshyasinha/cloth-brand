@@ -11,7 +11,7 @@ function showSection(section) {
 function toggleCart() {
     const cartModal = document.getElementById('cart-modal');
     if (cartModal.style.display === 'block') {
-        cartModal.style.display = 'none'; // Hide cart modal
+        closeModal('cart-modal'); // Use closeModal function for consistency
     } else {
         displayCart(); // Update cart display
         cartModal.style.display = 'block'; // Show cart modal
@@ -24,7 +24,7 @@ function closeModal(modalId) {
     modal.style.display = 'none'; // Hide the modal
 }
 
-// Example function to open the product modal
+// Function to open the product modal
 function openProductModal(product) {
     document.getElementById('modal-product-name').textContent = product.name;
     document.getElementById('modal-product-image').src = product.image;
@@ -34,28 +34,23 @@ function openProductModal(product) {
 }
 
 // Function to update cart count
-function updateCartCount(count) {
-    document.getElementById('cart-count').textContent = count; // Update the cart count
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = cart.length; // Update the cart count
 }
 
 // Open modal with specific product details
 function openModal(productName, productImage, productPrice) {
     document.getElementById("modal-product-name").innerText = productName;
     document.getElementById("modal-product-image").src = productImage;
-    document.getElementById("modal-product-price").innerText = `${productPrice}`;
+    document.getElementById("modal-product-price").innerText = `₹${productPrice}`;
 
     const modal = document.getElementById("product-modal");
-    const modalContent = modal.querySelector(".modal-content");
-
     modal.style.display = "flex"; // Show modal
-    modalContent.classList.add("show"); // Fade-in effect
 }
 
 // Close the product modal
 function closeProductModal() {
-    const modal = document.getElementById("product-modal");
-    modal.classList.remove("show");
-    modal.style.display = "none"; // Hide modal
+    closeModal('product-modal'); // Use closeModal function for consistency
 }
 
 // Close modal when clicking outside of it
@@ -66,7 +61,7 @@ window.onclick = function(event) {
         closeProductModal();
     }
     if (event.target === cartModal) {
-        toggleCart(); // Close cart modal
+        closeModal('cart-modal'); // Use closeModal function for consistency
     }
 };
 
@@ -113,14 +108,14 @@ const cartTotalElement = document.getElementById('cart-total');
 // Function to add products to the cart
 function addToCart(productName, productPrice) {
     cart.push({ name: productName, price: parseInt(productPrice) });
-    cartCountElement.innerText = cart.length; // Update cart count
+    updateCartCount(); // Update cart count
 }
 
 // Function to display cart items
 function displayCart() {
     cartItemsElement.innerHTML = ''; // Clear cart items
     let total = 0;
-    cart.forEach(item => {
+        cart.forEach(item => {
         total += item.price;
         const itemElement = document.createElement('div');
         itemElement.innerText = `${item.name} - ₹${item.price}`;
@@ -139,3 +134,21 @@ window.onscroll = function() {
     }
 };
 
+// Function to handle adding products to the cart from the product modal
+function addToCartFromModal() {
+    const productName = document.getElementById("modal-product-name").innerText;
+    const productPrice = document.getElementById("modal-product-price").innerText.replace('₹', '');
+    addToCart(productName, productPrice);
+    closeProductModal(); // Close the modal after adding to cart
+}
+
+// Example usage of opening the product modal
+// Assuming you have a product object with the necessary details
+const exampleProduct = {
+    name: "Example Product",
+    image: "path/to/image.jpg",
+    price: "₹500"
+};
+
+// Call this function when you want to open the modal
+openProductModal(exampleProduct);
