@@ -9,7 +9,6 @@ body {
     color: #333;
 }
 
-/* Hero Section */
 .hero {
     background-image: url('hero-background.jpg');
     background-size: cover;
@@ -37,10 +36,9 @@ body {
     background-color: #ddd;
 }
 
-/* Navbar */
 .navbar {
-    display: flex; /* Enables flexbox layout */
-    align-items: center; /* Vertically centers items in the navbar */
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -53,16 +51,15 @@ body {
 }
 
 .nav-item a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Default text color */
-    transition: color 0.3s; /* Smooth color transition */
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
 }
 
 .nav-item a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff;
 }
 
-/* Product Section */
 .product-section {
     padding: 5rem 1rem;
 }
@@ -75,106 +72,98 @@ body {
 }
 
 .product-item {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 1rem;
-    text-align: center; /* Center text and inline elements */
+    text-align: center;
 }
 
 .add-to-cart {
-    background-color: #007bff; /* Add to cart button color */
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 4px;
 }
 
 .add-to-cart:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
-
 
 .product-item img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-height: 200px; /* Limit height for uniformity */
+    height: auto;
+    max-height: 200px;
 }
 
 .product-item:hover {
     transform: scale(1.05);
 }
 
-/* Modal Overlay */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
-    justify-content: center; /* Center modal content horizontally */
-    align-items: center; /* Center modal content vertically */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 }
 
-/* Modal Content */
 .modal-content {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    background-color: #fff; /* White background */
-    margin: auto; /* Center the modal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin: auto;
     padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    width: 90%; /* Flexible width */
-    max-width: 500px; /* Increase max width if needed */
-    max-height: 90vh; /* Set max height to avoid overflow */
-    overflow: hidden; /* Hide overflow */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Image in Modal */
 .modal-content img {
-    width: 100%; /* Full width of modal */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 70vh; /* Set a max height to avoid overflow */
-    object-fit: contain; /* Ensure the entire image is shown */
-    margin-bottom: 1rem; /* Space below image */
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
-/* Show modal with fade-in */
 .modal.show {
-    display: flex; /* Show modal */
+    display: flex;
 }
 
 .modal-content.show {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Slide into view */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Close Button */
 .close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #333; /* Close button color */
+    color: #333;
     cursor: pointer;
 }
 
 .close:hover {
-    color: #ff0000; /* Change color on hover */
+    color: #ff0000;
 }
 
-/* Footer */
 .footer {
     background-color: #f8f8f8;
     padding: 2rem 1rem;
@@ -193,8 +182,8 @@ body {
     padding: 1rem;
     background-color: #f1f1f1;
     display: flex;
-    justify-content: flex-start; /* Align items to the start */
-    align-items: center; /* Center items vertically */
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .controls input {
@@ -202,14 +191,14 @@ body {
     width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 1rem; /* Add space between elements */
+    margin-right: 1rem;
 }
 
 .controls select {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 1rem; /* Add space between elements */
+    margin-right: 1rem;
 }
 
 .controls button {
@@ -225,7 +214,6 @@ body {
     background-color: #555;
 }
 
-/* Back to Top Button */
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -244,7 +232,7 @@ body {
 }
 
 .cart {
-    margin-left: auto; /* Push the cart button to the far right */
+    margin-left: auto;
 }
 
 .cart button {
@@ -253,9 +241,9 @@ body {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    border-radius: 4px; /* Add border radius for a cleaner look */
+    border-radius: 4px;
 }
 
 .cart button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
