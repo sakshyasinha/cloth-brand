@@ -6,134 +6,137 @@
     <link rel="stylesheet" href="style.css">
     <title>Clothing Dropshipping</title>
 </head>
-    <body>
+<body>
 <section class="hero">
-        <h1>Exclusive Fashion for Every Style</h1>
-        <p>Discover our unique collection and stay trendy.</p>
-        <button onclick="showSection('mens')">Shop Now</button>
-    </section>
+    <h1>Exclusive Fashion for Every Style</h1>
+    <p>Discover our unique collection and stay trendy.</p>
+    <button onclick="showSection('mens')">Shop Now</button>
+</section>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="nav-item"><a href="#" onclick="showSection('mens')">Men's Fashion</a></div>
-        <div class="nav-item"><a href="#" onclick="showSection('women')">Women's Fashion</a></div>
-        <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
-        <div class="nav-item"><a href="#about">About Us</a></div>
-    </div>  
-    
-   <section id="mens" class="product-section">
-        <h2 class="section-heading">Men's Fashion</h2>
-        <div class="product-grid">
+<!-- Navbar -->
+<div class="navbar">
+    <div class="nav-item"><a href="#" onclick="showSection('mens')">Men's Fashion</a></div>
+    <div class="nav-item"><a href="#" onclick="showSection('women')">Women's Fashion</a></div>
+    <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
+    <div class="nav-item"><a href="#about">About Us</a></div>
+</div>  
+
+<section id="mens" class="product-section">
+    <h2 class="section-heading">Men's Fashion</h2>
+    <div class="product-grid">
         <div class="product-item">
             <img src="site1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>₹1000</p>
-        <button onclick="openModal('Product 1', 'site1.jpg', '₹1000')">View Details</button>
+            <button onclick="openModal('Product 1', 'site1.jpg', '₹1000')">View Details</button>
         </div>
         <div class="product-item">
             <img src="site2.jpg" alt="Product 2">
             <h3>Product 2</h3>
             <p>₹1500</p>
-              <button onclick="openModal('Product 1', 'site2.jpg', '₹1500')">View Details</button>
+            <button onclick="openModal('Product 2', 'site2.jpg', '₹1500')">View Details</button>
         </div>
         <div class="product-item">
             <img src="site3.jpg" alt="Product 3">
             <h3>Product 3</h3>
             <p>₹1200</p>
-              <button onclick="openModal('Product 1', 'site3.jpg', '₹1200')">View Details</button>
+            <button onclick="openModal('Product 3', 'site3.jpg', '₹1200')">View Details</button>
         </div>
         <div class="product-item">
-            <img src="site 4.jpg" alt="Product 4">
+            <img src="site4.jpg" alt="Product 4">
             <h3>Product 4</h3>
             <p>₹1800</p>
-              <button onclick="openModal('Product 1', 'site4.jpg', '₹1800')">View Details</button>
+            <button onclick="openModal('Product 4', 'site4.jpg', '₹1800')">View Details</button>
         </div>
         <div class="product-item">
             <img src="site5.jpg" alt="Product 5">
             <h3>Product 5</h3>
             <p>₹2000</p>
-              <button onclick="openModal('Product 1', 'site5.jpg', '₹2000')">View Details</button>
+            <button onclick="openModal('Product 5', 'site5.jpg', '₹2000')">View Details</button>
         </div>
         <div class="product-item">
             <img src="site6.jpg" alt="Product 6">
             <h3>Product 6</h3>
             <p>₹1800</p>
-              <button onclick="openModal('Product 1', 'site6.jpg', '₹1800')">View Details</button>
+            <button onclick="openModal('Product 6', 'site6.jpg', '₹1800')">View Details</button>
         </div>
-   </div>
-  </section>
+    </div>
+</section>
 
-  <section id="women" class="product-section" style="display: none;">
-        <h2 class="section-heading">Women's Fashion</h2>
-        <div class="product-grid">
+<section id="women" class="product-section" style="display: none;">
+    <h2 class="section-heading">Women's Fashion</h2>
+    <div class="product-grid">
         <div class="product-item">
             <img src="sitew1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>₹1000</p>
-              <button onclick="openModal('Product 1', 'sitew1.jpg', '₹1000')">View Details</button>
+            <button onclick="openModal('Product W1', 'sitew1.jpg', '₹1000')">View Details</button>
         </div>
         <div class="product-item">
-            <img src="sitew2.jpg" alt="Product 1">
-            <h3>Product 1</h3>
+            <img src="sitew2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
             <p>₹2000</p>
-              <button onclick="openModal('Product 1', 'sitew2.jpg', '₹2000')">View Details</button>
+            <button onclick="openModal('Product W2', 'sitew2.jpg', '₹2000')">View Details</button>
         </div>
         <div class="product-item">
-            <img src="sitew3.jpg" alt="Product 1">
-            <h3>Product 1</h3>
+            <img src="sitew3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
             <p>₹1500</p>
-              <button onclick="openModal('Product 1', 'sitew1.jpg', '₹1500')">View Details</button>
+            <button onclick="openModal('Product W3', 'sitew3.jpg', '₹1500')">View Details</button>
         </div>
-   </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Children's Fashion Section -->
-   <section id="children" class="product-section" style="display: none;">
-        <h2 class="section-heading">Children's Fashion</h2>
-        <div class="product-grid">
+<!-- Children's Fashion Section -->
+<section id="children" class="product-section" style="display: none;">
+    <h2 class="section-heading">Children's Fashion</h2>
+    <div class="product-grid">
         <div class="product-item">
             <img src="sitech1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>₹1500</p>
-              <button onclick="openModal('Product 1', 'sitech1.jpg', '₹1500')">View Details</button>
+            <button onclick="openModal('Product C1', 'sitech1.jpg', '₹1500')">View Details</button>
         </div>
         <div class="product-item">
-            <img src="sitech2.jpg" alt="Product 1">
-            <h3>Product 1</h3>
+            <img src="sitech2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
             <p>₹1500</p>
-              <button onclick="openModal('Product 1', 'sitech2.jpg', '₹1500')">View Details</button>
+            <button onclick="openModal('Product C2', 'sitech2.jpg', '₹1500')">View Details</button>
         </div>
     </div>
-    </section>
-   <footer class="footer">
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <p>Learn more about our brand, mission, and team.</p>
-        </div>
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: info@clothingbrand.com</p>
-            <p>Phone: +123 456 7890</p>
-        </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-            </ul>
-        </div>
-    </footer>
-         <div id="product-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modal-product-name"></h2>
-            <img id="modal-product-image" src="" alt="Product Image">
-            <p id="modal-product-price"></p>
-        </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Learn more about our brand, mission, and team.</p>
     </div>
-    
-    <script src="script.js"></script>
+    <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: info@clothingbrand.com</p>
+        <p>Phone: +123 456 7890</p>
+    </div>
+    <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div id="product-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-product-name"></h2>
+        <img id="modal-product-image" src="" alt="Product Image" style="width: 100%; height: auto;">
+        <p id="modal-product-price"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
