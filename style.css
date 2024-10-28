@@ -39,23 +39,29 @@ body {
 
 /* Navbar */
 .navbar {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Vertically centers items in the navbar */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #fff;
+    justify-content: space-around;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
-.nav-item {
-    display: inline;
-    margin-right: 20px;
-}
+
 .nav-item a {
-    text-decoration: none;
-    color: #333;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Default text color */
+    transition: color 0.3s; /* Smooth color transition */
 }
+
+.nav-item a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
 
 /* Product Section */
 .product-section {
