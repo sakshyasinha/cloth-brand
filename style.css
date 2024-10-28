@@ -65,6 +65,10 @@ body {
     gap: 1rem;
     padding: 5rem 2rem;
 }
+.product-section {
+    padding: 0; /* Remove top padding */
+    padding-bottom: 20px; /* Keep or adjust bottom padding */
+}
 .product-item {
     border: 1px solid #ddd;
     padding: 1rem;
