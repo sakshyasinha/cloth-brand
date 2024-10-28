@@ -19,6 +19,15 @@
     <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
     <div class="nav-item"><a href="#about">About Us</a></div>
 </div>  
+ <div class="controls">
+    <input type="text" id="search-bar" onkeyup="filterProducts()" placeholder="Search products...">
+    <select id="sort" onchange="sortProducts()">
+        <option value="">Sort by Price</option>
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+    </select>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+</div>
 
 <section id="mens" class="product-section">
     <h2 class="section-heading"><u>Men's Fashion</u></h2>
@@ -104,6 +113,7 @@
         </div>
     </div>
 </section>
+<button id="back-to-top" onclick="scrollToTop()">⬆️</button>
 
 <footer class="footer">
     <div class="footer-section">
