@@ -156,7 +156,12 @@ body {
 #modal-product-image {
     width: 100%; /* Keep image responsive */
     height: auto; /* Maintain aspect ratio */
+}#modal-product-price {
+    text-align: center; 
+    font-size: 1.5em;
+    margin-top: 10px;
 }
+
 
 
 
