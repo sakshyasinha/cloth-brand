@@ -137,18 +137,18 @@ window.onscroll = function() {
 // Function to handle adding products to the cart from the product modal
 function addToCartFromModal() {
     const productName = document.getElementById("modal-product-name").innerText;
-    const productPrice = document.getElementById("modal-product-price").innerText.replace('₹', '').trim();
-    addToCart(productName, productPrice);
+    const productPrice = document.getElementById("modal-product-price").innerText.trim(); // No need to replace '₹' if you're keeping it
+
+    // Check if the product price contains '₹' and remove it if necessary
+    const priceNumber = parseInt(productPrice.replace('₹', '').trim()); // Extract numeric value for cart logic
+
+    // Add the product to the cart with the original formatted price
+    addToCart(productName, priceNumber); // Pass the numeric value without '₹'
     closeProductModal(); // Close the modal after adding to cart
 }
 
-// Example usage of opening the product modal
-// Assuming you have a product object with the necessary details
-const exampleProduct = {
-    name: "Example Product",
-    image: "path/to/image.jpg",
-    price: "500" // Price should be a number without the currency symbol
-};
+
+
 
 // Call this function when you want to open the modal
 openProductModal(exampleProduct);
