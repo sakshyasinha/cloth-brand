@@ -6,8 +6,13 @@ function showSection(section) {
     });
     document.getElementById(section).style.display = 'block'; // Show selected section
 }
+// Function to close any modal by its ID
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none'; // Hide the modal
+}
 
-// Function to toggle the cart modal
+// Ensure to call closeModal for cart modal
 function toggleCart() {
     const cartModal = document.getElementById('cart-modal');
     if (cartModal.style.display === 'block') {
@@ -18,11 +23,6 @@ function toggleCart() {
     }
 }
 
-// Function to close any modal by its ID
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none'; // Hide the modal
-}
 
 // Function to open the product modal
 function openProductModal(product) {
