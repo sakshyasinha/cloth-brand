@@ -110,11 +110,12 @@ body {
     border-radius: 5px;
     width: 300px;
     position: relative;
-    opacity: 0;
+    opacity: 0;  /* Default opacity */
     transition: opacity 0.3s ease;
 }
+
 .modal.show .modal-content {
-    opacity: 1;
+    opacity: 1;  /* Show opacity */
 }
 .close {
     position: absolute;
