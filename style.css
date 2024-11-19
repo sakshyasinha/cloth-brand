@@ -92,6 +92,7 @@ body {
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    height:25rem;
 }
 
 .product-item:hover {
@@ -102,7 +103,7 @@ body {
 .product-item img {
     width: 100%;
     height: auto;
-    max-height: 200px;
+    max-height: 300px;
     border-radius: 4px;
 }
 
