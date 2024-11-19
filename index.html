@@ -10,8 +10,8 @@
 <section class="hero">
     <h1>Exclusive Fashion for Every Style</h1>
     <p>Discover our unique collection and stay trendy.</p>
+    <button onclick="showSection('mens')">Shop Now</button>
 </section>
-
 
 <div class="navbar">
     <div class="nav-item"><a href="#" onclick="showSection('mens')">Men's Fashion</a></div>
@@ -20,7 +20,6 @@
     <div class="nav-item"><a href="https://www.linkedin.com/in/sakshya-sinha-b10a0827a/">About Us</a></div>
 </div>  
 
-
 <div class="controls">
     <input type="text" id="search-bar" onkeyup="filterProducts()" placeholder="Search products...">
     <select id="sort" onchange="sortProducts()">
@@ -28,7 +27,6 @@
         <option value="asc">Low to High</option>
         <option value="desc">High to Low</option>
     </select>
-
 
     <div class="cart">
         <button onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
@@ -44,8 +42,6 @@
         <button onclick="closeModal('cart-modal')">Close</button>
     </div>
 </div>
-
-
 
 <section id="mens" class="product-section">
     <h2 class="section-heading"><u>Men's Fashion</u></h2>
@@ -96,7 +92,7 @@
             <img src="sitew1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>₹1000</p>
-            <button onclick="openModal('Product 1', 'sitew1.jpg', '₹1000')">View Details</button>
+            <button onclick="openModal('Product W1', 'sitew1.jpg', '₹1000')">View Details</button>
         </div>
         <div class="product-item" data-name="Product 2" data-price="2000">
             <img src="sitew2.jpg" alt="Product 2">
@@ -108,7 +104,7 @@
             <img src="sitew3.jpg" alt="Product 3">
             <h3>Product 3</h3>
             <p>₹1500</p>
-            <button onclick="openModal('Product 3', 'sitew3.jpg', '₹1500')">View Details</button>
+            <button onclick="openModal('Product W3', 'sitew3.jpg', '₹1500')">View Details</button>
         </div>
     </div>
 </section>
@@ -153,19 +149,15 @@
     </div>
 </footer>
 
-
 <div id="product-modal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="modal-product-name"></h2>
         <img id="modal-product-image" src="" alt="Product Image" style="width: 100%; height: auto;">
         <p id="modal-product-price"></p>
-        <button onclick="addToCartFromModal()" class="add-to-cart">Add to Cart</button> <!-- Fixed the onclick attribute -->
+        <button onclick="addToCartFromModal()" class="add-to-cart">Add to Cart</button>
     </div>
 </div>
-
-
-
 
 <script src="script.js"></script>
 
