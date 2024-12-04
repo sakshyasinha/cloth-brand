@@ -1,52 +1,68 @@
+/* General Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background: linear-gradient(to bottom right, #f0f4f8, #d9e4f5);
+/* Root Variables */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333;
+    --light-bg: #f8f8f8;
+    --gradient-start: #f0f4f8;
+    --gradient-end: #d9e4f5;
+    --border-radius: 4px;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
 }
 
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--secondary-color);
+    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+}
+
+/* Hero Section */
 .hero {
-    background-image: url('hero-background.jpg');
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-background.jpg');
     background-size: cover;
+    background-position: center;
     color: #fff;
     text-align: center;
     padding: 5rem 1rem;
-    position: relative;
     overflow: hidden;
 }
 
 .hero h1 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: black;
+    text-shadow: 2px 2px 4px var(--shadow-medium);
 }
 
 .hero p {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: black;
 }
 
 .hero button {
     padding: 1rem 2rem;
-    color: #333;
+    color: var(--secondary-color);
     background-color: #fff;
     border: none;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .hero button:hover {
     background-color: #ddd;
+    transform: scale(1.05);
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -57,21 +73,22 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     justify-content: space-around;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow-light);
     z-index: 1000;
 }
 
 .nav-item a {
     text-decoration: none;
-    color: #333;
+    color: var(--secondary-color);
     transition: color 0.3s;
     font-weight: bold;
 }
 
 .nav-item a:hover {
-    color: #007bff;
+    color: var(--primary-color);
 }
 
+/* Product Section */
 .product-section {
     padding: 5rem 1rem;
 }
@@ -88,39 +105,41 @@ body {
     flex-direction: column;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    height:25rem;
+    height: 25rem;
 }
 
 .product-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px var(--shadow-light);
 }
 
 .product-item img {
     width: 100%;
     height: auto;
     max-height: 300px;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
 }
 
 .add-to-cart {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
 }
 
 .add-to-cart:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -142,12 +161,12 @@ body {
     background-color: #fff;
     margin: auto;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     width: 90%;
     max-width: 500px;
     max-height: 90vh;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px var(--shadow-medium);
 }
 
 .modal-content img {
@@ -164,7 +183,7 @@ body {
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: var(--secondary-color);
     cursor: pointer;
 }
 
@@ -172,8 +191,9 @@ body {
     color: #ff0000;
 }
 
+/* Footer */
 .footer {
-    background-color: #f8f8f8;
+    background-color: var(--light-bg);
     padding: 2rem 1rem;
     text-align: center;
     border-top: 1px solid #ccc;
@@ -188,6 +208,7 @@ body {
     padding: 0;
 }
 
+/* Controls */
 .controls {
     padding: 1rem;
     background-color: #f1f1f1;
@@ -196,27 +217,20 @@ body {
     align-items: center;
 }
 
-.controls input {
-    padding: 0.5rem;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 1rem;
-}
-
+.controls input,
 .controls select {
     padding: 0.5rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     margin-right: 1rem;
 }
 
 .controls button {
     padding: 0.5rem 1rem;
-    background-color: #333;
+    background-color: var(--secondary-color);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     cursor: pointer;
 }
 
@@ -224,37 +238,37 @@ body {
     background-color: #555;
 }
 
+/* Back to Top Button */
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: none;
-    background-color: #333;
+    background-color: var(--secondary-color);
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
-    transition: opacity 0.3s;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #back-to-top:hover {
     background-color: #555;
+    transform: translateY(-5px);
 }
 
-.cart {
-    margin-left: auto;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 
-.cart button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-}
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 
-.cart button:hover {
-    background-color: #0056b3;
+    .controls {
+        flex-wrap: wrap;
+    }
 }
