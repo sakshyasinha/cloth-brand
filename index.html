@@ -14,12 +14,11 @@
 </section>
 
 <div class="navbar">
-    <div class="nav-item"><a href="#" onclick="showSection('mens')">Men's Fashion</a></div>
-    <div class="nav-item"><a href="#" onclick="showSection('women')">Women's Fashion</a></div>
-    <div class="nav-item"><a href="#" onclick="showSection('children')">Children's Fashion</a></div>
+    <div class="nav-item"><a href="#" id="mens-link" onclick="showSection('mens')">Men's Fashion</a></div>
+    <div class="nav-item"><a href="#" id="women-link" onclick="showSection('women')">Women's Fashion</a></div>
+    <div class="nav-item"><a href="#" id="children-link" onclick="showSection('children')">Children's Fashion</a></div>
     <div class="nav-item"><a href="https://www.linkedin.com/in/sakshya-sinha-b10a0827a/">About Us</a></div>
-</div>  
-
+</div>
 <div class="controls">
     <input type="text" id="search-bar" onkeyup="filterProducts()" placeholder="Search products...">
     <select id="sort" onchange="sortProducts()">
