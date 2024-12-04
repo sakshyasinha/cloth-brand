@@ -1,3 +1,13 @@
+window.onload = function() {
+        highlightLink('mens-link');
+        showSection('mens');
+    };
+ function highlightLink(id) {
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+    }
 function showSection(section) {
     const sections = document.querySelectorAll('.product-section');
     sections.forEach(s => {
